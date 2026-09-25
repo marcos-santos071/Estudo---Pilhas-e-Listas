@@ -71,6 +71,21 @@ int main(){
  }
         finalizar();
           break;
+
+ case 4:
+    printf("\nDigite quantos numeros voce quer remover da pilha sequencial: ");
+    scanf("%d", &qtd);
+
+    for (int i = 0; i < qtd; i++) {
+            if (popEnc(&p2, &valorRemovido)) {
+                printf("Elemento %d removido com sucesso!\n", valorRemovido);
+        } else {
+            break;
+    }
+ }
+        finalizar();
+          break;
+
   }
 }while(opcao != 0);
 
