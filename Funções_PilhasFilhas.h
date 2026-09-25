@@ -23,6 +23,13 @@ typedef struct {
     int topo;
 } Pilha;
 
+
+void finalizar(){
+  printf("\nDigite ENTER para retornar ao menu\n");
+     getchar();
+     getchar();
+}
+
 void incializarPilha(Pilha *p1) {
     p1->topo = -1;
 }

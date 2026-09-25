@@ -6,7 +6,9 @@
 
 
 int main(){
-  int opcao, Vu;
+  int opcao, Vu1, Vu2;
+  int qtd;
+  int valorRemovido;
   Pilha p1;
   PilhaEncadeada p2;
 
@@ -28,8 +30,10 @@ int main(){
    imprimirPilhaEnc(&p2);
 
 
-   printf("1) Insira um valor na pilha com limite");
-   printf("2) Insira um valor na pilha sem limite");
+   printf("1) Insira um valor na pilha(sequencial)\n");
+   printf("2) Insira um valor na pilha(cadeada)\n");
+   printf("3) Exluir um valor na pilha(senquencial)\n");
+   printf("4) Exluir um valor na pilha(cadeada)\n");
 
    printf("digite a opcao que voce quer realizar: \n");
     scanf("%d", &opcao);
@@ -38,17 +42,35 @@ int main(){
   switch(opcao){
 
 
-
  case 1:
      printf("digite o valor a ser inserido: \n");
-     scanf("%d", &Vu);
-     push(&p1, Vu);
+     scanf("%d", &Vu1);
+     push(&p1, Vu1);
 
-     printf("\nDigite ENTER para retornar ao menu\n");
-     getchar();
-     getchar();
+     finalizar();
+     break;
 
+ case 2:
+    printf("digite o valor a ser inserido: \n");
+    scanf("%d", &Vu2);
+    pushEnc(&p2, Vu2);
 
+    finalizar();
+    break;
+
+ case 3:
+     printf("\nDigite quantos numeros voce quer remover da pilha sequencial: ");
+       scanf("%d", &qtd);
+
+        for (int i = 0; i < qtd; i++) {
+            if (pop(&p1, &valorRemovido)) {
+                printf("Elemento %d removido com sucesso!\n", valorRemovido);
+        } else {
+            break;
+    }
+ }
+        finalizar();
+          break;
   }
 }while(opcao != 0);
 
