@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1790293272 source:/home/marcos/Documents/Code block/estrutura de dados/Pilhas e filhas/main.c
+1790296789 source:/home/marcos/Documents/Code block/estrutura de dados/Pilhas e filhas/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Funções_PilhasFilhas.h"
 
-1790293553 /home/marcos/Documents/Code block/estrutura de dados/Pilhas e filhas/Funções_PilhasFilhas.h
+1790297342 /home/marcos/Documents/Code block/estrutura de dados/Pilhas e filhas/Funções_PilhasFilhas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -7,9 +7,12 @@
 
 int main(){
   int opcao, Vu;
-  Pilha p;
+  Pilha p1;
+  PilhaEncadeada p2;
 
-  incializarPilha(&p);
+
+  incializarPilha(&p1);
+  inicializarPilhaEnc(&p2);
 
   do{
   limparTela();
@@ -20,9 +23,13 @@ int main(){
    printf("|------ MENU ----|\n");
    printf("**==============**\n");
 
-   imprimirPilha(&p);
+   imprimirPilha(&p1);
 
-   printf("1) Insira um valor na pilha");
+   imprimirPilhaEnc(&p2);
+
+
+   printf("1) Insira um valor na pilha com limite");
+   printf("2) Insira um valor na pilha sem limite");
 
    printf("digite a opcao que voce quer realizar: \n");
     scanf("%d", &opcao);
@@ -35,7 +42,7 @@ int main(){
  case 1:
      printf("digite o valor a ser inserido: \n");
      scanf("%d", &Vu);
-     push(&p, Vu);
+     push(&p1, Vu);
 
      printf("\nDigite ENTER para retornar ao menu\n");
      getchar();
