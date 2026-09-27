@@ -1,4 +1,5 @@
-#include "Funções_PilhasFilhas.h"
+#include "Funções_PilhasFilas.h"
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -163,27 +164,27 @@ int estaBalanceado = pilhaEncVazia(&p2);
 }
 
 int avaliarPosfixa(char *expressao){
- Pilha pilha;
- inicializarPilhaEnc(&pilha);
+ PilhaEncadeada pilha1;           //  Usando a Pilha Encadeada
+ inicializarPilhaEnc(&pilha1);
 
  char *token = strtok(expressao, " ");
   while(token != NULL){
-    if(isdigit(token[0])){
-        push(&pilha, atoi(token));
+    if(isdigit(token[0]) || (token[0] == '-' && strlen(token) > 1)){
+        pushEnc(&pilha1, atoi(token));
     }else{
         int b, a;
-        pop(&pilha, &b);
-        pop(&pilha, &a);
+        popEnc(&pilha1, &b);
+        popEnc(&pilha1, &a);
 
-        if(token[0] == '+') {push(&pilha, a + b)}
-        else if{(token[0] == '-') push(&pilha, a - b);}
-        else if{(token[0] == '*') push(&pilha, a * b);}
-        else if {(token[0] == '/') push(&pilha, a / b);}
+        if(token[0] == '+'){pushEnc(&pilha1, a + b);}
+        else if(token[0] == '-'){pushEnc(&pilha1, a - b);}
+        else if(token[0] == '*'){pushEnc(&pilha1, a * b);}
+        else if(token[0] == '/'){pushEnc(&pilha1, a / b);}
     }
     token = strtok(NULL, " ");
   }
 
   int resultado;
-  pop(&pilha, &resultado);
+  popEnc(&pilha1, &resultado);
   return resultado;
 }

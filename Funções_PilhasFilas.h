@@ -1,9 +1,10 @@
-#ifndef FUNCOES_PILHASFILHAS_H
-#define FUNCOES_PILHASFILHAS_H
+#ifndef FUNCOES_PILHASFILAS_H
+#define FUNCOES_PILHASFILAS_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define TAM_MAX 100
 
@@ -45,5 +46,6 @@ int pushEnc(PilhaEncadeada *p2, int valor);
 int popEnc(PilhaEncadeada *p2, int *valorRemovido);
 void imprimirPilhaEnc(PilhaEncadeada *p2);
 int parentesesBalanceados(char *expressao);
+int avaliarPosfixa(char *expressao);
 
 #endif // FUNCOES_PILHASFILHAS_H

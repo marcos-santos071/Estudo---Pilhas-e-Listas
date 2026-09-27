@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Funções_PilhasFilhas.h"
+#include "Funções_PilhasFilas.h"
 
 
 
@@ -34,8 +34,9 @@ int main(){
    printf("2) Insira um valor na pilha(cadeada)\n");
    printf("3) Exluir um valor na pilha(senquencial)\n");
    printf("4) Exluir um valor na pilha(cadeada)\n");
+   printf("5) Calcular os 2 ultimos numeros da lista(encadeada)\n");
 
-   printf("digite a opcao que voce quer realizar: \n");
+   printf("\ndigite a opcao que voce quer realizar: \n");
     scanf("%d", &opcao);
 
 
@@ -85,6 +86,26 @@ int main(){
  }
         finalizar();
           break;
+
+ case 5:
+    char expressao[10];
+    int resultado;
+     printf("\nDigite a expressao pos-fixa separada por espacos (ex: 5 3 +):\n");
+     printf("\n(ex: 5 3 -)");
+     printf("\n(ex: 5 3 *)");
+     printf("\n(ex: 5 3 /)");
+
+     getchar();
+     fgets(expressao, sizeof(expressao), stdin);
+
+    expressao[strcspn(expressao, "\n")] = 0;
+
+    resultado = avaliarPosfixa(expressao);
+    pushEnc(&p2, resultado);
+
+    printf("O resultado %d inserido foi inserido na tabela.", resultado);
+    finalizar();
+    break;
 
   }
 }while(opcao != 0);
